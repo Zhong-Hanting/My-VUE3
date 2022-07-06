@@ -1,0 +1,32 @@
+ <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+     <style>
+         @keyframes slide {
+             0% {
+                 transform: translateX(0)
+             }
+
+             to {
+                 transform: translateX(2px)
+             }
+         }
+
+         @keyframes slide-2 {
+             0% {
+                 transform: translateX(0)
+             }
+
+             to {
+                 transform: translateX(-2px)
+             }
+         }
+     </style>
+     <path
+         d="M10.922 9.014H6.603c-.481 0-.956.165-1.286.516-1.42 1.504-1.659 3.19-.001 4.94.33.35.805.516 1.286.516h4.32"
+         stroke="#fff" stroke-width="1.5"
+         style="animation:slide 1.5s cubic-bezier(.86,0,.07,1) infinite alternate both" />
+     <path
+         d="M13.078 14.986h4.319c.481 0 .956-.166 1.287-.516 1.418-1.504 1.658-3.19 0-4.94-.33-.35-.805-.516-1.286-.516h-4.32"
+         stroke="#fff" stroke-width="1.5"
+         style="animation:slide-2 1.5s cubic-bezier(.86,0,.07,1) infinite alternate both" />
+     <path d="M8.735 11.957h6.53" stroke="#fff" stroke-width="1.5" stroke-linecap="round" />
+ </svg>

@@ -1,0 +1,20 @@
+ <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+     <style>
+         @keyframes rotate {
+             0% {
+                 transform: rotateZ(0)
+             }
+
+             to {
+                 transform: rotateZ(90deg)
+             }
+         }
+     </style>
+     <g
+         style="animation:rotate 3s cubic-bezier(.7,-.03,.43,.72) both infinite alternate-reverse;transform-origin:center center">
+         <path stroke="#ffffff" stroke-width="1.5" d="M12 20a8 8 0 100-16 8 8 0 000 16z" />
+         <path fill="#ffffff" fill-rule="evenodd"
+             d="M14.246 9.033l-.516 3.97-3.18 2.431a.5.5 0 01-.8-.461l.516-3.97 3.18-2.431a.5.5 0 01.8.461zM12 13a1 1 0 100-2 1 1 0 000 2z"
+             clip-rule="evenodd" />
+     </g>
+ </svg>

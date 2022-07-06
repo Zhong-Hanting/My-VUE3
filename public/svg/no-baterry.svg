@@ -1,0 +1,20 @@
+ <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+     <style>
+         @keyframes blink {
+
+             0%,
+             50%,
+             to {
+                 opacity: 1
+             }
+
+             25%,
+             75% {
+                 opacity: 0
+             }
+         }
+     </style>
+     <rect width="14" height="8" x="5" y="8" stroke="#ffffff" stroke-width="1.5" rx="1" />
+     <path stroke="#ffffff" stroke-linecap="round" stroke-width="1.5" d="M7.593 10.2v3.6"
+         style="animation:blink 3s infinite both" />
+ </svg>

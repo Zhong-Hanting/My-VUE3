@@ -1,0 +1,15 @@
+ <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+     <style>
+         @keyframes check {
+             to {
+                 stroke-dashoffset: 0;
+             }
+         }
+     </style>
+     <path stroke="#fff" stroke-width="1.5"
+         d="M10.922 9.014H6.603c-.481 0-.956.165-1.286.516-1.42 1.504-1.659 3.19-.001 4.94.33.35.805.516 1.286.516h4.32m2.156 0h4.319c.481 0 .956-.166 1.287-.516 1.418-1.504 1.658-3.19 0-4.94-.33-.35-.805-.516-1.286-.516h-4.32" />
+     <path stroke="#fff" stroke-linecap="round" stroke-width="1.5" d="M8.735 11.957h6.53" />
+     <path stroke="#fff" stroke-linecap="round" stroke-width="1.5" d="M18.514 5.487L5.487 18.514"
+         style="animation:check 2s infinite cubic-bezier(.99,-.1,.01,1.02) alternate" stroke-dashoffset="100"
+         stroke-dasharray="100" />
+ </svg>

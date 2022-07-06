@@ -1,0 +1,91 @@
+html body {
+  font-family: Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+html body header,
+html body section,
+html body nav,
+html body video,
+html body div,
+html body dl,
+html body dt,
+html body dd,
+html body ul,
+html body ol,
+html body li,
+html body pre,
+html body form,
+html body fieldset,
+html body input,
+html body a,
+html body select,
+html body textarea,
+html body p,
+html body blockquote,
+html body th,
+html body td,
+html body h1,
+html body h2,
+html body h3,
+html body h4,
+html body h4,
+html body h5,
+html body span,
+html body strong,
+html body b,
+html body i,
+html body svg,
+html body image,
+html body button,
+html body input,
+html body textarea {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  border: 0 none;
+  outline: none;
+}
+html body table {
+  border-collapse: collapse;
+}
+html body table caption {
+  margin-left: -1px;
+}
+html body legend {
+  display: none;
+}
+html body address,
+html body caption,
+html body em,
+html body strong,
+html body th,
+html body i {
+  font-style: normal;
+  font-weight: 400;
+}
+html body hr {
+  border-bottom: 1px solid #FFFFFF;
+  border-top: 1px solid #E4E4E4;
+  border-width: 1px 0;
+  clear: both;
+  height: 2px;
+  margin: 5px 0;
+  overflow: hidden;
+}
+html body ol,
+html body ul {
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  user-select: none;
+}
+html body a {
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+html body a:hover {
+  color: white;
+}

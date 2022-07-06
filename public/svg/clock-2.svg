@@ -1,0 +1,17 @@
+ <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+     <style>
+         @keyframes rotate {
+             0% {
+                 transform: rotate(0)
+             }
+
+             to {
+                 transform: rotate(360deg)
+             }
+         }
+     </style>
+     <rect width="16" height="16" x="4" y="4" stroke="#fff" stroke-width="1.5" rx="8" />
+     <path stroke="#fff" stroke-linecap="round" stroke-width="1.5" d="M12.021 12l2.325 2.325" />
+     <path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12.021 12V6.84"
+         style="animation:rotate 2s linear infinite both;transform-origin:center" />
+ </svg>

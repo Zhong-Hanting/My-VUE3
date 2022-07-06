@@ -1,0 +1,37 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none">
+    <style>
+        @keyframes n-info {
+
+            0%,
+            to {
+                transform: rotate(0deg);
+                transform-origin: center
+            }
+
+            10%,
+            90% {
+                transform: rotate(2deg)
+            }
+
+            20%,
+            40%,
+            60% {
+                transform: rotate(-6deg)
+            }
+
+            30%,
+            50%,
+            70% {
+                transform: rotate(6deg)
+            }
+
+            80% {
+                transform: rotate(-2deg)
+            }
+        }
+    </style>
+    <circle cx="12.29" cy="12" r="8" stroke="#ffffff" stroke-width="1.5"></circle>
+    <path fill="#ffffff"
+        d="M12.924 15.106h.713c.113 0 .17.057.17.17v.554c0 .113-.057.17-.17.17h-2.693c-.113 0-.17-.057-.17-.17v-.554c0-.113.057-.17.17-.17h.713v-3.78h-.611c-.113 0-.17-.056-.17-.169v-.588c0-.114.057-.17.17-.17h1.709c.113 0 .17.056.17.17v4.537zm-1.369-5.714a.804.804 0 01-.215-.577c0-.234.072-.427.215-.577A.776.776 0 0112.143 8c.25 0 .445.08.589.238.15.15.226.343.226.577a.782.782 0 01-.226.577c-.151.15-.35.226-.6.226-.241 0-.434-.075-.577-.226z"
+        style="animation:n-info .8s cubic-bezier(.455,.03,.515,.955) both infinite"></path>
+</svg>
