@@ -1,15 +1,11 @@
 <template>
     <div class="page-index">
-        <div id="nav">
-            <router-link to="/">Home</router-link> |
-            <router-link to="/about">About</router-link>
-        </div>
         <router-view />
         <a class="dev-btn" @click="updateShowDevToolDialog(true)">
             <el-icon :size="30"><platform /></el-icon>
             <span>开发者工具</span>
         </a>
-        <devFrame v-if="showDevToolDialog"></devFrame>
+        <devFrame v-if="showDevToolDialog" class="devFrame"></devFrame>
     </div>
 </template>
 <script lang="ts">
@@ -28,7 +24,7 @@
         setup(){
             //store
             const store = useStore();
-            store.commit('updateShowDevToolDialog', true)
+            store.commit('updateShowDevToolDialog', false)
             return{
                 showDevToolDialog:computed(()=>store.state.showDevToolDialog),
                 updateShowDevToolDialog:(value: boolean) => store.commit('updateShowDevToolDialog', value)
@@ -37,7 +33,7 @@
     })
 </script>
 <style lang="less">
-.page-index{  text-align: center;
+.page-index{  text-align: center; width: 100%; height: 100%;
     #nav { padding: 30px;
         a { font-weight: bold; color: #2c3e50;
             &.router-link-exact-active { color: #42b983; }
@@ -48,5 +44,8 @@
     svg{}
     span{display: block;}
     &:hover{background: rgba(0, 0, 0, 0.9);}
+}
+.devFrame{
+    z-index:99999;
 }
 </style>

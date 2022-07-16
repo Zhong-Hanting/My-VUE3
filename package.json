@@ -9,9 +9,12 @@
   "dependencies": {
     "@babel/runtime": "^7.17.2",
     "@element-plus/icons-vue": "^1.1.1",
+    "@fortawesome/fontawesome-free": "^6.1.1",
     "axios": "^0.26.1",
     "core-js": "^3.21.1",
+    "echarts": "^5.3.3",
     "element-plus": "^2.0.5",
+    "element-resize-detector": "^1.2.4",
     "vue": "^3.2.31",
     "vue-router": "^4.0.12",
     "vuex": "^4.0.2"

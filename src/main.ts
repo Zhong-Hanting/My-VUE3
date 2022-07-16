@@ -11,6 +11,8 @@ app.use(store)
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import * as ElIconModules from '@element-plus/icons-vue'
+import '../public/static/font/font_3508298_k7h9agjqi0r/iconfont.js'
+// import 'font-awesome/css/font-awesome.css'
 app.use(ElementPlus)
 // 统一注册Icon图标
 for (const iconName in ElIconModules) {
