@@ -74,7 +74,8 @@
                                         if(item.role=='superManger'){
                                             // 判断是否有子级有就继续调用
                                             if(item.children){
-                                                digui(item.children)
+                                                item.children=digui(item.children)
+                                                return true
                                             }
                                             // 只要权限满足就返回值
                                             return true
@@ -125,12 +126,15 @@
         .logout{ line-height: 4rem;
             .el-button{padding: 0 40px;background: #EEE; color: #000;}
         }
+        .main(){
+            height: calc(100% - 60px);
+        }
         .logo{display: flex; position: relative; width: 104px; margin: 0 20px;
             #img {
-                cursor: pointer; position: absolute; z-index: 999;  width: 104px;  height: 104px;
+                cursor: pointer; position: absolute; z-index: 999;  width: 104px;height: 104px;
                 background-image: url("../../public/static/ani-industry.png");
                 background-repeat: no-repeat;
-                background-position: 0px 0px;
+                background-position: center center;
             }
             h2{position: absolute;}
         }

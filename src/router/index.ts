@@ -39,7 +39,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../views/echarts/index.vue'),
       },
       { 
-        title:'地图定位',
+        title:'综合展示',
         role:'superManger',
         show:true,
         path: '/map',
@@ -103,6 +103,13 @@ const routes: Array<RouteRecordRaw> = [
             path: '/all/info',
             name: 'info',
             component: () => import('../views/allMenu/info/info.vue'),
+          },
+          {
+            title:'threeJS',
+            show:true,
+            path: '/all/threeJS',
+            name: 'info',
+            component: () => import('../views/allMenu/threejsDemo/threejsDemo.vue'),
           },
         ]
       },

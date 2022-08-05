@@ -15,7 +15,9 @@
     "echarts": "^5.3.3",
     "element-plus": "^2.0.5",
     "element-resize-detector": "^1.2.4",
+    "three": "^0.143.0",
     "vue": "^3.2.31",
+    "vue-jsonp": "^2.0.0",
     "vue-router": "^4.0.12",
     "vuex": "^4.0.2"
   },

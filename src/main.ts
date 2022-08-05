@@ -7,7 +7,6 @@ import store from './store'
 
 app.use(router)
 app.use(store)
-
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import * as ElIconModules from '@element-plus/icons-vue'
