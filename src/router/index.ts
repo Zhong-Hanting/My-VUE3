@@ -47,12 +47,31 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../views/map/index.vue'),
       },
       { 
-        title:'svg绘图',
+        title:'绘图模块',
         role:'superManger',
         show:true,
-        path: '/svg',
-        name: 'svg',
-        component: () => import('../views/svg/index.vue'),
+        path: '/draw',
+        name: 'draw',
+        component: () => import('../views/draw/frame.vue'),
+        children:[
+          {
+            title:'svg',
+            role:'superManger',
+            show:true,
+            path: '/draw/svg',
+            name: 'svg',
+            component: () => import('../views/draw/svg/index.vue'),
+          },
+          {
+            title:'canvas',
+            role:'superManger',
+            show:true,
+            path: '/draw/canvas',
+            name: 'canvas',
+            component: () => import('../views/draw/canvas/index.vue'),
+          },
+         
+        ]
       },
       { 
         title:'表格列表',
