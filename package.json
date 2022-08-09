@@ -13,10 +13,12 @@
     "axios": "^0.26.1",
     "core-js": "^3.21.1",
     "echarts": "^5.3.3",
+    "echarts-liquidfill": "^3.1.0",
     "element-plus": "^2.0.5",
     "element-resize-detector": "^1.2.4",
     "three": "^0.143.0",
     "vue": "^3.2.31",
+    "vue-count-to": "^1.0.13",
     "vue-jsonp": "^2.0.0",
     "vue-router": "^4.0.12",
     "vuex": "^4.0.2"

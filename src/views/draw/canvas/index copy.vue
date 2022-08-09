@@ -116,7 +116,7 @@ var elementResizeDetectorMaker=require('element-resize-detector');
         #canvasBox{
             box-sizing: border-box;
             position: absolute;
-            z-index: 99999;
+            z-index: 99;
             border: 1px solid red;
             top: 0;
             left: 0;

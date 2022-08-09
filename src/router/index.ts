@@ -127,7 +127,7 @@ const routes: Array<RouteRecordRaw> = [
             title:'threeJS',
             show:true,
             path: '/all/threeJS',
-            name: 'info',
+            name: 'threeJS',
             component: () => import('../views/allMenu/threejsDemo/threejsDemo.vue'),
           },
         ]
