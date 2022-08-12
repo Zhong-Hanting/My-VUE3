@@ -1,6 +1,6 @@
 <template>
     <div class="page">
-        <h2>表格页2静态页面</h2>
+        <h2>表格页2静态页面（第二次进入页面 数据没有渲染 但是cannvas 已经在dom上了 ）</h2>
         <div class="contain">
             <div class="top">
                 <div class="left">
@@ -116,7 +116,7 @@ var elementResizeDetectorMaker=require('element-resize-detector')
 import countTo from 'vue-count-to';
 import * as echarts from 'echarts'
 import  'echarts-liquidfill'
-// import '../../../public/static/js/china.js'
+import '../../../public/static/js/china.js'
 import {ref,reactive,onMounted,toRefs,nextTick} from 'vue'
 
         let data=reactive({
@@ -178,7 +178,7 @@ import {ref,reactive,onMounted,toRefs,nextTick} from 'vue'
                     completed:false
                 },
                 map:{
-                    title:'矩形树图',
+                    title:'地图',
                     dom:{},
                     dataorigin:[],
                     option:{},
@@ -232,7 +232,7 @@ import {ref,reactive,onMounted,toRefs,nextTick} from 'vue'
             })
 
         });
-        const  gett1=(async()=>{
+        const gett1=(async()=>{
             let option = {
                 color: ['#67F9D8', '#FFE434', '#56A3F1', '#FF917C'],
                 title: {},
@@ -257,7 +257,7 @@ import {ref,reactive,onMounted,toRefs,nextTick} from 'vue'
                     },
                     splitArea: {
                         areaStyle: {
-                        color: ['#77EADF', '#26C3BE', '#64AFE9', '#428BD4'],
+                        // color: ['#77EADF', '#26C3BE', '#64AFE9', '#428BD4'],
                         shadowColor: 'rgba(0, 0, 0, 0.2)',
                         shadowBlur: 10
                         }
@@ -277,10 +277,17 @@ import {ref,reactive,onMounted,toRefs,nextTick} from 'vue'
                 series: [
                     {
                     type: 'radar',
-                    emphasis: {
-                        lineStyle: {
-                        width: 4
+                    smooth:false,
+                       itemStyle:{
+                    normal:{
+                        lineStyle:{
+                            width:2,
+                            type:'dotted'  //'dotted'虚线 'solid'实线
                         }
+                    },
+                    lineStyle: {
+                        width: 4
+                    }
                     },
                     data: [
                         {
@@ -304,98 +311,108 @@ import {ref,reactive,onMounted,toRefs,nextTick} from 'vue'
             let option = {
                 series: [{
                     type: 'liquidFill',
-            name: 'series name', //series name
-            radius: '90%',
-            center: ['50%', '50%'],
-            backgroundStyle: {
-                // borderWidth: 1, //内边框宽度
-                // borderColor: '#2cd6d6', //背景内边框
-                color: '#0c4250', //背景颜色
-                // shadowColor: 'red', //阴影
-                // shadowBlur: 10, //阴影模糊
-            },
-            outline: {
-                borderDistance: 5, //边框距离
-                itemStyle: {
-                    borderWidth: 1,
-                    borderColor: '#2cd6d6',
-                    // shadowBlur: 10,
-                    // shadowColor: 'red'
+                name: 'series name', //series name
+                radius: '90%',
+                center: ['50%', '50%'],
+                backgroundStyle: {
+                    // borderWidth: 1, //内边框宽度
+                    // borderColor: '#2cd6d6', //背景内边框
+                    color: '#0c4250', //背景颜色
+                    // shadowColor: 'red', //阴影
+                    // shadowBlur: 10, //阴影模糊
+                },
+                outline: {
+                    borderDistance: 5, //边框距离
+                    itemStyle: {
+                        borderWidth: 1,
+                        borderColor: '#2cd6d6',
+                        // shadowBlur: 10,
+                        // shadowColor: 'red'
+                    }
+                },
+                data: [
+                    0.6
+                    // {
+                    // name: 'data name', //data name
+                    // value: 0.6 //By default, the text label of liquid fill chart displays percentage of the first data. For example, for a chart with data [0.6, 0.5, 0.4, 0.3], default text is 60%.
+                    // }, 0.5, 0.4, 0.3
+                
+                ],
+                label: { //To change the text, you may use label.formatter, which can be set to a string or function.
+                    normal: {
+                        // formatter: '{a}\n{b}\nValue: {c}', //If it is a string, {a} series name, {b} data name,{c} data value.
+                        textStyle: {
+                            color: '#2cd6d6', //波浪上文本颜色
+                            insideColor: '#2cd6d6', //波浪内部字体颜色
+                            fontSize: 20
+                        },
+                        position: ['50%', '50%'], //Text position is at the center by default. label.position can be set to be 'inside', 'left', 'right', 'top', 'bottom', or horizontal and vertical positions like ['10%', '20%'], which means '10%' to the left (controlled by label.align, which can be 'left', 'center', or 'right') and '20%' to the top (controlled by label.baseline, which can be 'top', 'middle', or 'bottom').
+                        // position:'top'
+                        // align: 'center',
+                        // baseline: 'center'
+    
+                    }
+                },
+                itemStyle: {    //水的颜色
+                    normal: {
+                        color: '#2ad0cf'
+                    }
                 }
-            },
-            data: [
-                0.6
-                // {
-                // name: 'data name', //data name
-                // value: 0.6 //By default, the text label of liquid fill chart displays percentage of the first data. For example, for a chart with data [0.6, 0.5, 0.4, 0.3], default text is 60%.
-                // }, 0.5, 0.4, 0.3
-            
-            ],
-            label: { //To change the text, you may use label.formatter, which can be set to a string or function.
-                normal: {
-                    // formatter: '{a}\n{b}\nValue: {c}', //If it is a string, {a} series name, {b} data name,{c} data value.
-                    textStyle: {
-                        color: '#2cd6d6', //波浪上文本颜色
-                        insideColor: '#2cd6d6', //波浪内部字体颜色
-                        fontSize: 20
-                    },
-                    position: ['50%', '50%'], //Text position is at the center by default. label.position can be set to be 'inside', 'left', 'right', 'top', 'bottom', or horizontal and vertical positions like ['10%', '20%'], which means '10%' to the left (controlled by label.align, which can be 'left', 'center', or 'right') and '20%' to the top (controlled by label.baseline, which can be 'top', 'middle', or 'bottom').
-                    // position:'top'
-                    // align: 'center',
-                    // baseline: 'center'
- 
-                }
-            }
-                }]
-            };
+            }]
+        };
             return option
         });
         const getWaterRight=(async()=>{
             let option = {
                 series: [{
                     type: 'liquidFill',
-            name: 'series name', //series name
-            radius: '90%',
-            center: ['50%', '50%'],
-            backgroundStyle: {
-                // borderWidth: 1, //内边框宽度
-                // borderColor: '#2cd6d6', //背景内边框
-                color: '#0c4250', //背景颜色
-                // shadowColor: 'red', //阴影
-                // shadowBlur: 10, //阴影模糊
-            },
-            outline: {
-                borderDistance: 5, //边框距离
-                itemStyle: {
-                    borderWidth: 1,
-                    borderColor: '#2cd6d6',
-                    // shadowBlur: 10,
-                    // shadowColor: 'red'
-                }
-            },
-            data: [
-                0.6
-                // {
-                // name: 'data name', //data name
-                // value: 0.6 //By default, the text label of liquid fill chart displays percentage of the first data. For example, for a chart with data [0.6, 0.5, 0.4, 0.3], default text is 60%.
-                // }, 0.5, 0.4, 0.3
-            
-            ],
-            label: { //To change the text, you may use label.formatter, which can be set to a string or function.
-                normal: {
-                    // formatter: '{a}\n{b}\nValue: {c}', //If it is a string, {a} series name, {b} data name,{c} data value.
-                    textStyle: {
-                        color: '#2cd6d6', //波浪上文本颜色
-                        insideColor: '#2cd6d6', //波浪内部字体颜色
-                        fontSize: 20
+                    name: 'series name', //series name
+                    radius: '90%',
+                    center: ['50%', '50%'],
+                    backgroundStyle: {
+                        // borderWidth: 1, //内边框宽度
+                        // borderColor: '#2cd6d6', //背景内边框
+                        color: '#0c4250', //背景颜色
+                        // shadowColor: 'red', //阴影
+                        // shadowBlur: 10, //阴影模糊
                     },
-                    position: ['50%', '50%'], //Text position is at the center by default. label.position can be set to be 'inside', 'left', 'right', 'top', 'bottom', or horizontal and vertical positions like ['10%', '20%'], which means '10%' to the left (controlled by label.align, which can be 'left', 'center', or 'right') and '20%' to the top (controlled by label.baseline, which can be 'top', 'middle', or 'bottom').
-                    // position:'top'
-                    // align: 'center',
-                    // baseline: 'center'
- 
-                }
-            }
+                    outline: {
+                        borderDistance: 5, //边框距离
+                        itemStyle: {
+                            borderWidth: 1,
+                            borderColor: '#2cd6d6',
+                            // shadowBlur: 10,
+                            // shadowColor: 'red'
+                        }
+                    },
+                    data: [
+                        0.6
+                        // {
+                        // name: 'data name', //data name
+                        // value: 0.6 //By default, the text label of liquid fill chart displays percentage of the first data. For example, for a chart with data [0.6, 0.5, 0.4, 0.3], default text is 60%.
+                        // }, 0.5, 0.4, 0.3
+                    
+                    ],
+                    label: { //To change the text, you may use label.formatter, which can be set to a string or function.
+                        normal: {
+                            // formatter: '{a}\n{b}\nValue: {c}', //If it is a string, {a} series name, {b} data name,{c} data value.
+                            textStyle: {
+                                color: '#2cd6d6', //波浪上文本颜色
+                                insideColor: '#2cd6d6', //波浪内部字体颜色
+                                fontSize: 20
+                            },
+                            position: ['50%', '50%'], //Text position is at the center by default. label.position can be set to be 'inside', 'left', 'right', 'top', 'bottom', or horizontal and vertical positions like ['10%', '20%'], which means '10%' to the left (controlled by label.align, which can be 'left', 'center', or 'right') and '20%' to the top (controlled by label.baseline, which can be 'top', 'middle', or 'bottom').
+                            // position:'top'
+                            // align: 'center',
+                            // baseline: 'center'
+        
+                        }
+                    },
+                    itemStyle: {    //水的颜色
+                            normal: {
+                                color: '#2ad0cf'
+                            }
+                        }
                 }]
             };
             return option
@@ -532,6 +549,7 @@ import {ref,reactive,onMounted,toRefs,nextTick} from 'vue'
         });
         const gett3=(async()=>{
            let option = {
+                color:['#ff9c89','#ffdc89','#717fbe','#639eb2'],
                 title: {
                     // text: 'Nightingale Chart',
                     // subtext: 'Fake Data',
@@ -545,11 +563,12 @@ import {ref,reactive,onMounted,toRefs,nextTick} from 'vue'
                     left: 'center',
                     top: 'bottom',
                     data: [
-                    'rose1',
-                    'rose2',
-                    'rose3',
-                    'rose4',
-                    ]
+                    '36-45岁',
+                    '46-55岁',
+                    '55岁以上',
+                    '35岁以下',
+                    ],
+                    show: false//隐藏
                 },
                 toolbox: {
                     // show: true,
@@ -625,17 +644,18 @@ import {ref,reactive,onMounted,toRefs,nextTick} from 'vue'
         });
         const gett4=(async()=>{
             let option = {
+                color:['#68aaf2','#f78888'],
                  grid:{
                     bottom:'20%',
                 },
                 tooltip: {
                     trigger: 'axis',
-                        axisPointer: {
-                        type: 'cross',
-                        crossStyle: {
-                            color: '#999'
-                        }
-                    }
+                        // axisPointer: {
+                        //     type: 'cross',
+                        //     crossStyle: {
+                        //         color: '#999'
+                        //     }
+                        // }
                 },
                 toolbox: {
                     // feature: {
@@ -661,6 +681,11 @@ import {ref,reactive,onMounted,toRefs,nextTick} from 'vue'
                         data: ['部门一', '部门二', '部门三', '部门四', '部门五'],
                         axisPointer: {
                             type: 'shadow'
+                        },
+                        axisLine: {//这是y轴文字颜色
+                            lineStyle: {
+                                color: "#fff",
+                            }
                         }
                     }
                 ],
@@ -677,11 +702,11 @@ import {ref,reactive,onMounted,toRefs,nextTick} from 'vue'
                         axisLabel: {
                             // formatter: '{value} ml'
                         },
-                        // axisLine: {//这是y轴文字颜色
-                        //     lineStyle: {
-                        //         color: "#fff",
-                        //     }
-                        // }
+                        axisLine: {//这是y轴文字颜色
+                            lineStyle: {
+                                color: "#fff",
+                            }
+                        }
                     
                     },
                     //     {
@@ -783,12 +808,48 @@ import {ref,reactive,onMounted,toRefs,nextTick} from 'vue'
             };
             return option;
         });
+        const randomData=(()=>{
+            return Math.round(Math.random()*500);
+        })
         const getMap=(async()=>{
+            var mydata = [
+                {name: '北京',value: randomData() },{name: '天津',value: randomData() },
+                {name: '上海',value: randomData() },{name: '重庆',value: randomData() },
+                {name: '河北',value: randomData() },{name: '河南',value: randomData() },
+                {name: '云南',value: randomData() },{name: '辽宁',value: randomData() },
+                {name: '黑龙江',value: randomData() },{name: '湖南',value: randomData() },
+                {name: '安徽',value: randomData() },{name: '山东',value: randomData() },
+                {name: '新疆',value: randomData() },{name: '江苏',value: randomData() },
+                {name: '浙江',value: randomData() },{name: '江西',value: randomData() },
+                {name: '湖北',value: randomData() },{name: '广西',value: randomData() },
+                {name: '甘肃',value: randomData() },{name: '山西',value: randomData() },
+                {name: '内蒙古',value: randomData() },{name: '陕西',value: randomData() },
+                {name: '吉林',value: randomData() },{name: '福建',value: randomData() },
+                {name: '贵州',value: randomData() },{name: '广东',value: randomData() },
+                {name: '青海',value: randomData() },{name: '西藏',value: randomData() },
+                {name: '四川',value: randomData() },{name: '宁夏',value: randomData() },
+                {name: '海南',value: randomData() },{name: '台湾',value: randomData() },
+                {name: '香港',value: randomData() },{name: '澳门',value: randomData() }
+            ];
+
+
             let option = {
-                backgroundColor: '#FFFFFF',
+                backgroundColor: '#144258',
                 title: {
                     text: '全国地图',
-                    subtext: '纯属虚构',
+                    textStyle:{
+                        //文字颜色
+                        color:'#fff',
+                        //字体风格,'normal','italic','oblique'
+                        fontStyle:'normal',
+                        //字体粗细 'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
+                        fontWeight:'bold',
+                        //字体系列
+                        fontFamily:'sans-serif',
+                        //字体大小
+                　　　　 fontSize:18
+                    },
+                    // subtext: '纯属虚构',
                     x:'center'
                 },
                 tooltip : {
@@ -803,10 +864,10 @@ import {ref,reactive,onMounted,toRefs,nextTick} from 'vue'
                         {start: 300, end: 400},{start: 200, end: 300},
                         {start: 100, end: 200},{start: 0, end: 100},
                     ],
-                    color: ['#66CC33', '#00FF00', '#66FF33','#339900', '#33CC00', '#00CC00']
+                    color: ['#024d68', '#45819', '#3f7a8e','#0d4854', '#639eb2',]
                 },
                 series: [{
-                    name: '随机数据',
+                    name: '数据',
                     type: 'map',
                     mapType: 'china', 
                     roam: true,
@@ -823,36 +884,14 @@ import {ref,reactive,onMounted,toRefs,nextTick} from 'vue'
             };
             return option;
 	
-        })
-        const randomData=(()=>{
-            return Math.round(Math.random()*500);
-        })
-
+        });
         const drawCharts=((name:string)=>{
             nextTick(()=>{
                 let mychart=echartsList[name].dom=echarts.init(document.getElementById(name))
                 mychart.setOption(echartsList[name].option)
             })
         });
-        var mydata = [
-            {name: '北京',value: randomData() },{name: '天津',value: randomData() },
-            {name: '上海',value: randomData() },{name: '重庆',value: randomData() },
-            {name: '河北',value: randomData() },{name: '河南',value: randomData() },
-            {name: '云南',value: randomData() },{name: '辽宁',value: randomData() },
-            {name: '黑龙江',value: randomData() },{name: '湖南',value: randomData() },
-            {name: '安徽',value: randomData() },{name: '山东',value: randomData() },
-            {name: '新疆',value: randomData() },{name: '江苏',value: randomData() },
-            {name: '浙江',value: randomData() },{name: '江西',value: randomData() },
-            {name: '湖北',value: randomData() },{name: '广西',value: randomData() },
-            {name: '甘肃',value: randomData() },{name: '山西',value: randomData() },
-            {name: '内蒙古',value: randomData() },{name: '陕西',value: randomData() },
-            {name: '吉林',value: randomData() },{name: '福建',value: randomData() },
-            {name: '贵州',value: randomData() },{name: '广东',value: randomData() },
-            {name: '青海',value: randomData() },{name: '西藏',value: randomData() },
-            {name: '四川',value: randomData() },{name: '宁夏',value: randomData() },
-            {name: '海南',value: randomData() },{name: '台湾',value: randomData() },
-            {name: '香港',value: randomData() },{name: '澳门',value: randomData() }
-        ];
+
 
 </script>
 

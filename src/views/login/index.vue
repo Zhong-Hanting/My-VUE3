@@ -34,16 +34,17 @@ export default {
     },
     // 验证信息是否正确
     inputInfo: function () {
-    //   if (this.name !== "admin@qq.com") {
-    //     this.password = "";
-    //     return 'err';
-    //   }
-    //   if (this.password !== "12345678") {
-    //     this.password = "";
-    //     return 'err';
-    //   }
+      // if (this.name !== "admin@qq.com") {
+      //   this.password = "";
+      //   return 'err';
+      // }
+      // if (this.password !== "12345678") {
+      //   this.password = "";
+      //   return 'err';
+      // }
       // 返回上面 , 提交信息
-    //   this.requestInfo();
+      // this.requestInfo();
+      localStorage.setItem('token',123+'假token')
       // 跳转到 /home
       this.$router.push("/main");
     }
